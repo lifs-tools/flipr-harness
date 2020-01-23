@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Nils Hoffmann <nils.hoffmann@isas.de>
  */
 @Slf4j
-public class RPlotter {
+public class RJobRunner {
 
     @Data
     public static class Arguments {
@@ -54,7 +54,7 @@ public class RPlotter {
     static public Path extractResource(String resourceName, Path outputDir) throws Exception {
         File outputFile = new File(outputDir.toFile(), resourceName);
         if (!outputFile.exists()) {
-            try (InputStream stream = RPlotter.class.getResourceAsStream(
+            try (InputStream stream = RJobRunner.class.getResourceAsStream(
                     resourceName)) {
                 if (stream == null) {
                     throw new Exception(

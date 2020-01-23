@@ -111,8 +111,8 @@ public class Converter {
                             toFile().
                             exists()) {
                             try {
-                                RPlotter plotter = new RPlotter();
-                                RPlotter.Arguments args = new RPlotter.Arguments();
+                                RJobRunner plotter = new RJobRunner();
+                                RJobRunner.Arguments args = new RJobRunner.Arguments();
                                 args.setOutputDir(outputDirPath);
                                 args.setDataPlots(this.arguments.plotData);
                                 args.setFileFormat(this.arguments.plotFormat);
