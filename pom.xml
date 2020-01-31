@@ -617,8 +617,8 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
         <site>
-            <id>jmztabm-github</id>
-            <url>scm:git:ssh://git@github.com/lifs-tools/jmztab-m.git</url>
+            <id>flipr-transition-extractor-github</id>
+            <url>scm:git:ssh://git@github.com/lifs-tools/flipr-transition-extractor.git</url>
         </site>
     </distributionManagement>
 </project>
