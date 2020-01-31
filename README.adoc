@@ -22,107 +22,24 @@ This generates the executable JAR file for reading and mapping of transition lis
 
 The generated JAVA code is available in a jar archive below the `target` directory:
 
-. transition-extractor-<VERSION>.jar
+. flipr-transition-extractor-<VERSION>.jar
 
-== Building the Docker Image
+== Running the application
 
-In order to build a Docker image of the command line interface application, run 
+If you want to run the application from the command line, change to the `target` folder after building the project.
+Then enter the following command:
 
-  ./mvnw -Pdocker install
+	java -jar flipr-transition-extractor-1.0.9.jar
 
-from your commandline (mvnw.bat on Windows).
-This will build and tag a Docker image lifs/flipr-transition-extractor with a corresponding version and make it available to your local Docker installation.
-To show the coordinates of the image, call
+This will print all possible arguments for the transition extractor. 
 
-  docker image ls | grep "flipr-transition-extractor"
+NOTE: You need to have the https://github.com/lifs-tools/flipr[flipr] R package installed before running the transition extractor.
 
-== Pulling the latest Docker Image
+The https://github.com/lifs-tools/flipr-trainer[flipr-trainer] project shows how to use the transition extractor.
 
-The latest Docker image is now hosted at docker hub. To retrieve the latest version, run:
+// == References
 
-  docker pull lifs/flipr-transition-extractor
-
-== Running the Docker Image
-
-If you have not done so, please build the Docker image of the validator cli or pull it from the docker hub (see previous sections).
-Then, run the following command, replacing `<VERSION>` with the current version, e.g. `1.0.4`) and `<DATA_DIR>` with the **local** directory containing your mzTab-M files:
-
-  docker run -v <YOUR_DATA_DIR>:/home/data:rw lifs/flipr-transition-extractor:<VERSION>
-
-This will only invoke the default entrypoint of the container, which is a shell script wrapper calling the jmztab-m-cli Jar. It passes all arguments to the validator, so that all
-arguments that you would pass normally will work in the same way (please replace `<YOUR_MZTABM_FILE>` with the actual file's name in `<YOUR_DATA_DIR>`:
-
-  docker run -v <YOUR_DATA_DIR>:/home/data:rw lifs/flipr-transition-extractor:<VERSION> -c <YOUR_MZTABM_FILE>
-
-== Using the project code releases via Maven Central
-
-The library release artifacts are available from Maven Central.
-If you want to use them, add the following lines to your own Maven pom file :
-
-To use the IO libraries (reading, writing and structural and logical validation) in your own Maven projects, use the following dependency:
-
-  <dependency>
-    <groupId>com.github.lifstools</groupId>
-    <artifactId>flipr-transition-extractor</artifactId>
-    <version>${fliprtrex.version}</version>
-  </dependency>
-
-where `fliprtrex.version` is the version of flipr-transition-extractor you wish to use, e.g. for a release version:
-
-  <properties>
-    <fliprtrex.version>1.0.4</fliprtrex.version>
-  </properties>
-
-as defined in the properties section of your pom file.
-
-== Using development snapshots
-
-The library development artifacts are available as SNAPSHOT (development versions) from Sonatype's OSSRH repository.
-If you want to use them, add the following lines to your own Maven pom file:
-
-  <repositories>
-    <repository>
-      <name>Sonatype Snapshot Repository</name>
-      <id>oss-sonatype-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-   ...
-  </repositories>
-
-The project coordinates for the api module are
-
-    <dependency>
-      <groupId>com.github.lifstools</groupId>
-      <artifactId>jmztabm-api</artifactId>
-      <version>${fliprtrex.version}</version>
-      <type>jar</type>
-    </dependency>
-
-and
-
-    <dependency>
-      <groupId>com.github.lifstools</groupId>
-      <artifactId>flipr-transition-extractor</artifactId>
-      <version>${fliprtrex.version}</version>
-      <type>jar</type>
-    </dependency>
-
-for the io module, where `fliprtrex.version` is the version of flipr-transition-extractor you wish to use, e.g. for a `SNAPSHOT` version:
-
-  <properties>
-    <fliprtrex.version>1.0.5-SNAPSHOT</fliprtrex.version>
-  </properties>
-
-as defined in the properties section of your pom file.
-
-The SNAPSHOTS are also available from https://oss.sonatype.org/content/repositories/snapshots/com/github/lifstools/.
-
-== References
-
-This project provides an execution harness for https://github.com/lifs-tools/flipr[flipR].
+// This project provides an execution harness for https://github.com/lifs-tools/flipr[flipR].
 
 //  * **https://pubs.acs.org/doi/10.1021/acs.analchem.8b04310[N. Hoffmann et al., Analytical Chemistry 2019; Jan;91(5):3302-3310.] https://pubs.acs.org/doi/pdf/10.1021/acs.analchem.8b04310[PDF File.] https://www.ncbi.nlm.nih.gov/pubmed/30688441[PubMed record].**
 
