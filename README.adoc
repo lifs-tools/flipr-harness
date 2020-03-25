@@ -6,6 +6,8 @@ Nils Hoffmann <nils.hoffmann@isas.de>
 
 This project provides an execution harness including transition extraction from mzML files, automatic model training and selection based on the https://github.com/lifs-tools/flipr[flipr project].
 
+To use it on Linux systems with parallelized training, please see the https://github.com/lifs-tools/flipr[flipr-trainer].
+
 flipR (Fragment-based Lipid Intensity Prediction) predicts MS-platform specific lipid fragment profiles that simplify the selection of optimized collision energies for custom lipid transition libraries with https://github.com/lifs-tools/LipidCreator[LipidCreator] in conjunction with https://skyline.ms/project/home/software/Skyline/begin.view[Skyline].
 
 The Maven site with JavaDoc is available https://lifs-tools.github.io/flipr-transition-extractor[here].
