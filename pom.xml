@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.lifs-tools</groupId>
     <artifactId>flipr-transition-extractor</artifactId>
-    <version>1.0.9</version>
+    <version>1.0.10</version>
     <packaging>jar</packaging>
     <name>FlipR Transition Extractor</name>
     <description>An MSDK-based tool to extract MS2 scans from mzML files for collision energy series data for training of prediction models with flipR.</description>
