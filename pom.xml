@@ -40,7 +40,7 @@
         <dependency>
             <groupId>io.github.msdk</groupId>
             <artifactId>msdk-io-mzml</artifactId>
-            <version>0.0.19</version>
+            <version>0.0.27</version>
         </dependency>
         <dependency>
             <groupId>io.github.msdk</groupId>
