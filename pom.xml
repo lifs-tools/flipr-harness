@@ -45,7 +45,7 @@
         <dependency>
             <groupId>io.github.msdk</groupId>
             <artifactId>msdk-io-fileimport</artifactId>
-            <version>0.0.19</version>
+            <version>0.0.27</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
